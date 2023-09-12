@@ -5,6 +5,7 @@ import 'package:multi_store_app/main_screens/dashboard.dart';
 import 'package:multi_store_app/main_screens/home.dart';
 import 'package:multi_store_app/main_screens/profile.dart';
 import 'package:multi_store_app/main_screens/stores.dart';
+import 'package:multi_store_app/main_screens/upload.dart';
 
 class SupplierHomeScreen extends StatefulWidget {
   const SupplierHomeScreen({super.key});
@@ -15,14 +16,12 @@ class SupplierHomeScreen extends StatefulWidget {
 
 class _SupplierHomeScreen extends State<SupplierHomeScreen> {
   int _selectedindex = 0;
-  final List<Widget> _tabs = const [
+  final List<Widget> _tabs = [
     HomeScreen(),
     CategoryScreen(),
     StoresScreen(),
     DashboardSceen(),
-    Center(
-      child: Text('Upload'),
-    )
+    UploadScreen()
   ];
   @override
   Widget build(BuildContext context) {

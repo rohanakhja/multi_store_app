@@ -87,30 +87,32 @@ class _CategoryScreenState extends State<CategoryScreen> {
   }
 
   Widget categView(Size size) {
-    return Container(
-      height: size.height * 0.8,
-      width: size.width * 0.8,
-      color: Colors.white,
-      child: PageView(
-        controller: _pageController,
-        onPageChanged: (value) {
-          for (var element in items) {
-            element.isSelected = false;
-          }
-          setState(() {
-            items[value].isSelected = true;
-          });
-        },
-        scrollDirection: Axis.vertical,
-        children: const [
-          MenCategory(),
-          WomenCategory(),
-          ShoesCategory(),
-          BagsCategory(),
-          AccessoriesCategory(),
-          KidsCategory(),
-          BeautyCategory(),
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        height: size.height * 0.8,
+        width: size.width * 0.8,
+        color: Colors.white,
+        child: PageView(
+          controller: _pageController,
+          onPageChanged: (value) {
+            for (var element in items) {
+              element.isSelected = false;
+            }
+            setState(() {
+              items[value].isSelected = true;
+            });
+          },
+          scrollDirection: Axis.vertical,
+          children: const [
+            MenCategory(),
+            WomenCategory(),
+            ShoesCategory(),
+            BagsCategory(),
+            AccessoriesCategory(),
+            KidsCategory(),
+            BeautyCategory(),
+          ],
+        ),
       ),
     );
   }

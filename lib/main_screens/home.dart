@@ -1,6 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/homescreens/hoem_bags.dart';
+import 'package:multi_store_app/homescreens/home_accessories.dart';
+import 'package:multi_store_app/homescreens/home_beauty.dart';
+import 'package:multi_store_app/homescreens/home_kids.dart';
+import 'package:multi_store_app/homescreens/home_shoes.dart';
+import 'package:multi_store_app/homescreens/home_women.dart';
 
+import '../homescreens/home_men.dart';
 import '../minor_screens/search.dart';
 import '../widgets/fake_search.dart';
 
@@ -49,15 +56,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ]),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            Center(child: Text('men screen')),
-            Center(child: Text('women screen')),
-            Center(child: Text('shoes screen')),
-            Center(child: Text('Bags screen')),
-            Center(child: Text('Accessories screen')),
-            Center(child: Text('Kids screen')),
-            Center(child: Text('Beauty screen')),
+            MenScreen(),
+            WomenScreen(),
+            ShoesScreen(),
+            BagsScreen(),
+            AccessoriesScreen(),
+            KidsScreen(),
+            BeautyScreen(),
           ],
         ),
       ),
